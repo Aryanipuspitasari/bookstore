@@ -13,7 +13,7 @@ import './App.css'
 function App() {
   const [inputName, setInputName] = useState("");
   const [books, setBooks] = useState([]);
-  const [orders, setOrders] = useState({});
+  const [orders, setOrders] = useState([]);
 
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
               <Navigation />
 
               <Routes>
-                {/* <Route index element={<Home/>}/> */}
+                <Route path="" element={<Welcome/>}/>
                 <Route path="/welcome" element={<Welcome />} />
                 <Route path="/books" element={<Books />} />
                 <Route path="/checkout" element={<CheckOut />} />

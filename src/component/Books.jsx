@@ -4,7 +4,7 @@ import BooksContext from "../context/BooksContext.jsx";
 import OrderContext from "../context/OrderContext.jsx";
 
 function Books() {
-    const { inputName } = useContext(UserContext);
+  const [inputName] = useContext(UserContext);
   const [books, setBooks] = useContext(BooksContext);
   const [orders, setOrders] = useContext(OrderContext);
 
@@ -27,8 +27,9 @@ function Books() {
     };
 
     fetchData();
-  }, []);
+  }, [setBooks]);
 
+  // store the books detail and to handle the order + 1 or none
   const handleOrder = (bookId) => {
     setOrders((prevOrders) => ({
       ...prevOrders,
@@ -36,11 +37,7 @@ function Books() {
     }));
   };
 
-  const handleImageClick = (bookId) => {
-    // console.log(`Image clicked for book ID: ${bookId}`);
-  };
 
-//   console.log("Books:", books); 
   return (
     <>
       <p>
@@ -53,13 +50,10 @@ function Books() {
           books.map((book, index) => (
             <div key={index} className="book-item">
               <img
-                // src={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.image}`}
-
                 src={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.idCode}.jpg`}
                 alt={book.title}
                 onClick={() => {
                   handleOrder(book.id);
-                  handleImageClick(book.id);
                 }}
               />
               <p className="book-title">{book.title}</p>

@@ -19,8 +19,10 @@ function Welcome(){
         }
 
         <div className="container-form">
-        <label>Your name :</label>
-        <input type="text" value={inputName} onChange={handleInput} />
+        <label>Your name :
+
+        <input type="text" value={inputName} onChange={handleInput} id="name-user" name="name"/>
+        </label>
         </div>
 
         

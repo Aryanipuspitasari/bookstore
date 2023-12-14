@@ -1,22 +1,25 @@
 // import Welcome from "./Welcome.jsx";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
+
+  
   return (
     <>
       <h1>Bookstore</h1>
       <nav>
-      <Link to="/welcome">Welcome</Link>
-      <Link to="/books">Books</Link>
-      <Link to="/checkout">Checkout</Link>
-      
+      <NavLink to="/welcome" >
+          Welcome
+        </NavLink>
+        <NavLink to="/books">
+          Books
+        </NavLink>
+        <NavLink to="/checkout" >
+          Checkout
+        </NavLink>
       </nav>
-
-      <Outlet />
     </>
   );
 }
 
-
-
-export default Navigation
+export default Navigation;
