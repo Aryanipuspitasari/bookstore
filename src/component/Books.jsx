@@ -30,6 +30,7 @@ function Books() {
   }, [setBooks]);
 
   // store the books detail and to handle the order + 1 or none
+  // https://stackoverflow.com/questions/36326612/how-to-delete-an-item-from-state-array
   const handleOrder = (bookId) => {
     setOrders((prevOrders) => ({
       ...prevOrders,

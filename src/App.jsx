@@ -1,12 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
+// IMPORT COMPONENTS
 import Navigation from "./component/Navigations.jsx";
 import Welcome from "./component/Welcome.jsx";
 import Books from "./component/Books.jsx";
 import CheckOut from "./component/Checkout.jsx";
+
+// IMPORT CONTENT
 import UserContext from "./context/UserContext.jsx";
 import BooksContext from "./context/BooksContext.jsx";
 import OrderContext from "./context/OrderContext.jsx";
-import { useState } from "react";
+
+// IMPORT CSS
 import './App.css'
 
 
